@@ -9,7 +9,7 @@ define('vrcoinify_error_amount_too_low', 'The amount to pay is too small for Coi
 function vrcoinify_config()
 {
     return [
-        'FriendlyName' => ['Type' => 'System', 'Value' => 'VRCoinify'],
+        'FriendlyName' => ['Type' => 'System', 'Value' => 'Coinify Gateway'],
         'api' => ['FriendlyName' => 'API Key', 'Type' => 'text', 'Size' => '40'],
         'secret' => ['FriendlyName' => 'API Secret', 'Type' => 'text', 'Size' => '40'],
         'ipn' => ['FriendlyName' => 'IPN Secret', 'Type' => 'text', 'Size' => '40'],
