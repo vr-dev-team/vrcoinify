@@ -41,9 +41,9 @@ function vrcoinify_link($params)
         vrcoinify_plugin_version,
         $params['description'],
         ['invoiceid' => $params['invoiceid']],
-        "${$params['systemurl']}/modules/gateways/callback/vrcoinify.php",
+        $params['systemurl'] . '/modules/gateways/callback/coinify.php',
         null,
-        "${$params['systemurl']}/viewinvoice.php?id=${$params['invoiceid']}"
+        $params['systemurl'] . '/viewinvoice.php?id=' . $params['invoiceid']
     );
 
     if (empty($result)) {
