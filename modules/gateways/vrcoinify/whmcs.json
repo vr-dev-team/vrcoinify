@@ -1,0 +1,34 @@
+{
+  "schema": "1.0",
+  "type": "whmcs-gateways",
+  "name": "vr-coinify",
+  "license": "MIT",
+  "category": "gateway",
+  "description": {
+    "name": "Coinify Gateway",
+    "tagline": "Coinify Gateway Module allow you to integrate Coinify payment solutions with the WHMCS platform.",
+    "long": "Coinify Gateway Module allow you to integrate Coinify payment solutions with the WHMCS platform.",
+    "features": [
+      "Provide admin interface",
+      "Better error handling and module logging on errors",
+      "Using official PHP SDK",
+      "Additional checks for minimal amount of the payments"
+    ]
+  },
+  "logo": {
+    "filename": "logo.png"
+  },
+  "support": {
+    "homepage": "https:\/\/github.com\/vr-dev-team\/vrcoinify",
+    "learn_more": "",
+    "email": "ar@vr-dev.team",
+    "support_url": "https:\/\/github.com\/vr-dev-team\/vrcoinify",
+    "docs_url": "https:\/\/github.com\/vr-dev-team\/vrcoinify"
+  },
+  "authors": [
+    {
+      "name": "VR DEV TEAM",
+      "homepage": "https:\/\/vr-dev.team\/"
+    }
+  ]
+}
