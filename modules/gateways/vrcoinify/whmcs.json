@@ -3,7 +3,7 @@
   "type": "whmcs-gateways",
   "name": "vr-coinify",
   "license": "MIT",
-  "category": "Payments",
+  "category": "payments",
   "description": {
     "name": "Coinify Gateway",
     "tagline": "Coinify Gateway Module allow you to integrate Coinify payment solutions with the WHMCS platform.",
