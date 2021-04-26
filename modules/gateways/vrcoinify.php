@@ -47,7 +47,7 @@ function vrcoinify_link($params)
     );
 
     if (empty($result)) {
-        logModuleCall('vrcoinify', 'invoiceCreation', $params, $result, [], []);
+        logModuleCall('vrcoinify', 'invoiceCreation', $params, $result, null, null);
         return renderError(vrcoinify_error_not_available);
     }
 
@@ -55,7 +55,7 @@ function vrcoinify_link($params)
 
     if ($error) {
         $code = $error['code'] ?? null;
-        logModuleCall('vrcoinify', 'invoiceCreation', $params, $result, [], []);
+        logModuleCall('vrcoinify', 'invoiceCreation', $params, $result, null, null);
 
         if ($code && 'amount_too_low' === $code) {
             return renderError(vrcoinify_error_amount_too_low);
