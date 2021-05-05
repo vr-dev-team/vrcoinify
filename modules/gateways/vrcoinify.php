@@ -34,6 +34,8 @@ function vrcoinify_link($params)
 
     $api = new CoinifyAPI($params['api'], $params['secret']);
 
+    $systemUrl = rtrim($params['systemurl'], '/');
+
     $result = $api->invoiceCreate(
         $params['amount'],
         $params['currency'],
@@ -41,9 +43,9 @@ function vrcoinify_link($params)
         vrcoinify_plugin_version,
         $params['description'],
         ['invoiceid' => $params['invoiceid']],
-        $params['systemurl'] . '/modules/gateways/callback/coinify.php',
+        $systemUrl . '/modules/gateways/callback/vrcoinify.php',
         null,
-        $params['systemurl'] . '/viewinvoice.php?id=' . $params['invoiceid']
+        $systemUrl . '/viewinvoice.php?id=' . $params['invoiceid']
     );
 
     if (empty($result)) {
