@@ -11,7 +11,7 @@ if (file_exists('../../../dbconnect.php')) {
 include('../../../includes/functions.php');
 include('../../../includes/gatewayfunctions.php');
 include('../../../includes/invoicefunctions.php');
-include('../coinify/CoinifyCallback.php');
+include('../vrcoinify/CoinifyCallback.php');
 
 $gatewaymodule = 'vrcoinify';
 
