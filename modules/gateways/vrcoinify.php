@@ -1,7 +1,7 @@
 <?php
 
 define('vrcoinify_plugin_name', 'VR Coinify WHMCS');
-define('vrcoinify_plugin_version', '0.1');
+define('vrcoinify_plugin_version', '0.7');
 define('vrcoinify_error_not_available', 'Coinify Gateway is not available right now. Please choose another payment gateway or contact support.');
 define('vrcoinify_error_amount_too_low', 'The amount to pay is too small for Coinify. Please choose another payment gateway.');
 
@@ -49,7 +49,10 @@ function vrcoinify_link($params)
     );
 
     if (empty($result)) {
+        $result['last_curl_error'] = $api->getLastCurlError();
+        $result['last_curl_errno'] = $api->getLastCurlErrno();
         logModuleCall('vrcoinify', 'invoiceCreation', $params, $result, null, null);
+
         return renderError(vrcoinify_error_not_available);
     }
 
@@ -57,6 +60,8 @@ function vrcoinify_link($params)
 
     if ($error) {
         $code = $error['code'] ?? null;
+        $result['last_curl_error'] = $api->getLastCurlError();
+        $result['last_curl_errno'] = $api->getLastCurlErrno();
         logModuleCall('vrcoinify', 'invoiceCreation', $params, $result, null, null);
 
         if ($code && 'amount_too_low' === $code) {

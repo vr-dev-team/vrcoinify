@@ -303,4 +303,19 @@ class CoinifyAPI {
         return $auth_header;
     }
 
+    /**
+     * @return string|null
+     */
+    public function getLastCurlError()
+    {
+        return $this->last_curl_error;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getLastCurlErrno()
+    {
+        return $this->last_curl_errno;
+    }
 }
