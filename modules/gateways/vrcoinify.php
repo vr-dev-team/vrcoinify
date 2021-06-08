@@ -49,7 +49,10 @@ function vrcoinify_link($params)
     );
 
     if (empty($result)) {
+        $result['last_curl_error'] = $api->getLastCurlError();
+        $result['last_curl_errno'] = $api->getLastCurlErrno();
         logModuleCall('vrcoinify', 'invoiceCreation', $params, $result, null, null);
+
         return renderError(vrcoinify_error_not_available);
     }
 
@@ -57,6 +60,8 @@ function vrcoinify_link($params)
 
     if ($error) {
         $code = $error['code'] ?? null;
+        $result['last_curl_error'] = $api->getLastCurlError();
+        $result['last_curl_errno'] = $api->getLastCurlErrno();
         logModuleCall('vrcoinify', 'invoiceCreation', $params, $result, null, null);
 
         if ($code && 'amount_too_low' === $code) {
