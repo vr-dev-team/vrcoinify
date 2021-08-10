@@ -1,9 +1,9 @@
 <?php
 
 define('vrcoinify_plugin_name', 'VR Coinify WHMCS');
-define('vrcoinify_plugin_version', '0.7');
+define('vrcoinify_plugin_version', '0.8');
 define('vrcoinify_error_not_available', 'Coinify Gateway is not available right now. Please choose another payment gateway or contact support.');
-define('vrcoinify_error_amount_too_low', 'The amount to pay is too small for Coinify. Please choose another payment gateway.');
+define('vrcoinify_error_amount_too_low', 'Minimum payment amount acceptable by Coinify gateway is 5 EUR or its equivalent. You may create an add funds invoice to reach a minimum amount or choose another payment gateway.');
 
 /** @return array */
 function vrcoinify_config()
